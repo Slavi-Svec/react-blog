@@ -6,6 +6,13 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Container from '@material-ui/core/container';
 import Grid from '@material-ui/core/Grid';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardActions from '@material-ui/core/CardActions';
+import CardMedia from '@material-ui/core/cardMedia';
+import CardContent from '@material-ui/core/CardContent';
+import Avatar from '@material-ui/core/Avatar';
+
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -31,12 +38,24 @@ const useStyles = makeStyles((theme) => ({
   blogTitle: {
     fontWeight: 800,
     paddingBottom: theme.spacing(3)
+  },
+  card: {
+    maxWidth: "100%",
+  },
+  media: {
+    height: 240
+  },
+  cardActions: {
+    display: "flex",
+    margin: "0 10px",
+    justifyContent: "sace-between",
+  },
+  author: {
+    display: "flex",
   }
 }));
-
 function App() {
   const classes = useStyles();
-
   return (
     <div className="App">
     <AppBar className={classes.appBar} position="static">
@@ -56,35 +75,36 @@ function App() {
         <Grid container spacing={3}>
           <Grid item xs={12} s={6} md={4} >
           <Card className={classes.card}>
-      <CardActionArea>
-          <CardMedia
-            component="img"
-            alt="Contemplative Reptile"
-            height="140"
-            image="/static/images/cards/contemplative-reptile.jpg"
-            title="Contemplative Reptile"
-          />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="h2">
-              Lizard
-            </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
-              Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-              across all continents except Antarctica
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-        <CardActions>
-          <Button size="small" color="primary">
-            Share
-          </Button>
-          <Button size="small" color="primary">
-            Learn More
-          </Button>
-        </CardActions>
-      </Card>
-    );
-  }
+        <CardActionArea>
+            <CardMedia
+              className={classes.media}
+              image="https://res.cloudinary.com/dblnwcqqz/image/upload/v1597276836/background-aug_jcgros.jpg"
+              title="Contemplative Reptile"
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="h2">
+                Learning to code
+              </Typography>
+              <Typography variant="body2" color="textSecondary" component="p">
+                How I started learing to code.
+              </Typography>
+            </CardContent>
+          </CardActionArea>
+          <CardActions className={classes.CardActions}>
+            <Box classname={classes.author}>
+              <Avatar
+              src="https://res.cloudinary.com/dblnwcqqz/image/upload/v1595392581/logo_nsg61p.png" />
+              <Box m={2} >
+                <Typography variant="subtitle2" component="p">
+                  Slavi Svec
+                </Typography>
+                <Typography variant="subtitle2" color="textSecondary" component="p">
+                  Aug 20, 2020
+                </Typography>
+            </Box>
+           </Box>
+          </CardActions>
+       </Card>
           </Grid>
           <Grid item xs={12} s={6} md={4} >
 
