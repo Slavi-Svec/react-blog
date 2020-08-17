@@ -12,6 +12,8 @@ import CardActions from '@material-ui/core/CardActions';
 import CardMedia from '@material-ui/core/cardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import Avatar from '@material-ui/core/Avatar';
+import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
+import Pagination from '@material-ui/lab/Pagination';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -31,6 +33,10 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     color: "#fff",
     fontSize: "4rem",
+    [theme.breakpoints.down("sm")]: {
+      heigh: 300,
+      fontSize: "3em"
+    }
   },
   blogsContainer: {
     paddingTop: theme.spacing(3)
@@ -52,6 +58,10 @@ const useStyles = makeStyles((theme) => ({
   },
   author: {
     display: "flex",
+  },
+  paginationContainer: {
+    display: "flex",
+    justifyContent: "center"
   }
 }));
 function App() {
@@ -73,7 +83,115 @@ function App() {
              Articles
           </Typography>
         <Grid container spacing={3}>
-          <Grid item xs={12} s={6} md={4} >
+        <Grid item xs={12} sm={6} md={4} >
+          <Card className={classes.card}>
+        <CardActionArea>
+            <CardMedia
+              className={classes.media}
+              image="https://res.cloudinary.com/dblnwcqqz/image/upload/v1597625382/download-1_rbhqsr.jpg"
+              title=""
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="h2">
+                CodeWars is cool 
+              </Typography>
+              <Typography variant="body2" color="textSecondary" component="p">
+                Making a start on codeWars
+              </Typography>
+            </CardContent>
+          </CardActionArea>
+          <CardActions className={classes.CardActions}>
+            <Box classname={classes.author}>
+              <Avatar
+              src="https://res.cloudinary.com/dblnwcqqz/image/upload/v1595392581/logo_nsg61p.png" />
+              <Box ml={2} >
+                <Typography variant="subtitle2" component="p">
+                  Slavi Svec
+                </Typography>
+                <Typography variant="subtitle2" color="textSecondary" component="p">
+                  Aug 21, 2020
+                </Typography>
+              </Box>
+              </Box>
+              <box>
+             <BookmarkBorderIcon />
+              </box>
+              </CardActions>
+            </Card>
+          </Grid>
+          <Grid item xs={12} sm={6} md={4} >
+          <Card className={classes.card}>
+        <CardActionArea>
+            <CardMedia
+              className={classes.media}
+              image="https://res.cloudinary.com/dblnwcqqz/image/upload/v1597276836/background-aug_jcgros.jpg"
+              title=""
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="h2">
+                Learning to code
+              </Typography>
+              <Typography variant="body2" color="textSecondary" component="p">
+                How I started learing to code.
+              </Typography>
+            </CardContent>
+          </CardActionArea>
+          <CardActions className={classes.CardActions}>
+            <Box classname={classes.author}>
+              <Avatar
+              src="https://res.cloudinary.com/dblnwcqqz/image/upload/v1595392581/logo_nsg61p.png" />
+              <Box ml={2} >
+                <Typography variant="subtitle2" component="p">
+                  Slavi Svec
+                </Typography>
+                <Typography variant="subtitle2" color="textSecondary" component="p">
+                  Aug 20, 2020
+                </Typography>
+              </Box>
+              </Box>
+              <box>
+             <BookmarkBorderIcon />
+              </box>
+              </CardActions>
+            </Card>
+          </Grid>
+          <Grid item xs={12} sm={6} md={4} >
+          <Card className={classes.card}>
+        <CardActionArea>
+            <CardMedia
+              className={classes.media}
+              image="https://res.cloudinary.com/dblnwcqqz/image/upload/v1597276836/background-aug_jcgros.jpg"
+              title=""
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="h2">
+                Learning to code
+              </Typography>
+              <Typography variant="body2" color="textSecondary" component="p">
+                How I started learing to code.
+              </Typography>
+            </CardContent>
+          </CardActionArea>
+          <CardActions className={classes.CardActions}>
+            <Box classname={classes.author}>
+              <Avatar
+              src="https://res.cloudinary.com/dblnwcqqz/image/upload/v1595392581/logo_nsg61p.png" />
+              <Box ml={2} >
+                <Typography variant="subtitle2" component="p">
+                  Slavi Svec
+                </Typography>
+                <Typography variant="subtitle2" color="textSecondary" component="p">
+                  Aug 20, 2020
+                </Typography>
+              </Box>
+              </Box>
+              <box>
+             <BookmarkBorderIcon />
+              </box>
+              </CardActions>
+            </Card>
+          </Grid>
+          <Grid item xs={12} sm={6} md={4} >
           <Card className={classes.card}>
         <CardActionArea>
             <CardMedia
@@ -94,28 +212,25 @@ function App() {
             <Box classname={classes.author}>
               <Avatar
               src="https://res.cloudinary.com/dblnwcqqz/image/upload/v1595392581/logo_nsg61p.png" />
-              <Box m={2} >
+              <Box ml={2} >
                 <Typography variant="subtitle2" component="p">
                   Slavi Svec
                 </Typography>
                 <Typography variant="subtitle2" color="textSecondary" component="p">
                   Aug 20, 2020
                 </Typography>
-            </Box>
-           </Box>
-          </CardActions>
-       </Card>
-          </Grid>
-          <Grid item xs={12} s={6} md={4} >
-
-          </Grid>
-          <Grid item xs={12} s={6} md={4} >
-
-          </Grid>
-          <Grid item xs={12} s={6} md={4} >
-
+              </Box>
+              </Box>
+              <box>
+             <BookmarkBorderIcon />
+              </box>
+              </CardActions>
+            </Card>
           </Grid>
         </Grid>
+        <Box my={4} className={classes.paginationContainer}>
+        <Pagination count={10} />
+        </Box>
       </Container>
     </div>
   );
