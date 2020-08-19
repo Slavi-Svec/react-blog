@@ -15,6 +15,7 @@ import Avatar from '@material-ui/core/Avatar';
 import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
 import Pagination from '@material-ui/lab/Pagination';
 
+
 const useStyles = makeStyles((theme) => ({
   appBar: {
     backgroundColor: "#fff"
@@ -63,8 +64,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center"
   }
 }));
-
-const App = () =>{
+function App() {
   const classes = useStyles();
   return (
     <div className="App">
@@ -93,7 +93,7 @@ const App = () =>{
             />
             <CardContent>
               <Typography gutterBottom variant="h5" component="h2">
-                CodeWars is cool
+                CodeWars is cool 
               </Typography>
               <Typography variant="body2" color="textSecondary" component="p">
                 Making a start on codeWars
@@ -225,7 +225,7 @@ const App = () =>{
              <BookmarkBorderIcon />
               </box>
               </CardActions>
-            </Card> */}
+            </Card>
           </Grid>
         </Grid>
         <Box my={4} className={classes.paginationContainer}>
